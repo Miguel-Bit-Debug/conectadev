@@ -48,7 +48,7 @@ function Header() {
                     <SvgIcon className={classes.bell}>
                         <Bell></Bell>
                     </SvgIcon>
-                    <Avatar alt="Remy Shalf" src="/"/>
+                    <Avatar alt="Remy Shalf" src="/" />
                 </div>
                 {/* <div>
                     <a href="/">Conecta Dev</a>
