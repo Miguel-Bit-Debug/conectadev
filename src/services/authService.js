@@ -1,11 +1,12 @@
 import axios from '../utils/axios'
 
 class AuthService {
-    signIn(email, password) {
+    signIn = (email, password) => {
         return new Promise((resolve, reject) => {
             axios.post('/api/home/login', { email, password })
                 .then((response) => {
-                    if(response.data.user) {
+                    if (response.data.user) {
+                        //this.setUser(response.data.user)
                         resolve(response.data.user)
                     } else {
                         reject(response.data.error)
@@ -16,6 +17,20 @@ class AuthService {
                 })
         })
     }
+
+    setUser = (user) => {
+        localStorage.setItem("user", JSON.stringify(user))
+    }
+
+    getUser = () => {
+        const user = localStorage.getItem("user")
+        if(user) {
+            return JSON.parse(user)
+        }
+        return user
+    }
+
+    isAuthenticated = () => !!this.getUser()
 }
 
 const authService = new AuthService()

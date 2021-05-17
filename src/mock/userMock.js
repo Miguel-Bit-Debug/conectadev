@@ -1,11 +1,5 @@
 import mock from '../utils/mock'
 
-// mock.onPost('/api/home/login').reply(200, {
-//     'id': 1,
-//     'username': 'miguel',
-//     'email': 'migueldossantos@hotmail.com'
-// })
-
 mock.onPost('/api/home/login').reply((config) => {
     const { email, password } = JSON.parse(config.data)
     if(email != 'migueldossantos@hotmail.com' || password != 'admin') {
@@ -16,7 +10,8 @@ mock.onPost('/api/home/login').reply((config) => {
         id: 1,
         name: 'Miguel S Ribeiro',
         username: 'MDMago',
-        email: 'migueldossantos@hotmail.com'
+        email: 'migueldossantos@hotmail.com',
+        avatar: '/images/avatars/miguel.png'
     }
     return [200, { user }]
 })
