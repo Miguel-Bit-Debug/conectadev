@@ -1,11 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './App';
+import CssBaseLine from '@material-ui/core/CssBaseline'
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <CssBaseLine>
+      <App />
+    </CssBaseLine>
   </React.StrictMode>,
   document.getElementById('root')
 );

@@ -6,8 +6,9 @@ import SignIn from './pages/SignIn'
 import Home from './pages/Home'
 import theme from './theme'
 
+import './mock'
+
 function App() {
-  const url = window.location.href
   return (
     <ThemeProvider theme={theme}>
       <BrowserRouter>
