@@ -5,7 +5,7 @@ import { makeStyles } from '@material-ui/core/styles';
 //componentes
 import NavBar from './Components/NavBar';
 import Feed from './Components/Feed';
-import Header from './Components/Header'
+import Header from './Components/Header/'
 import Container from '@material-ui/core/Container';
 import Box from '@material-ui/core/Box';
 

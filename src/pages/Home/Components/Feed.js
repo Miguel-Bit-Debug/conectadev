@@ -16,7 +16,7 @@ const posts = [
             id: 1,
             name: "Miguel S. Ribeiro",
             username: "MDMago",
-            avatar: "http://via.placeholder.com/150"
+            avatar: "/images/avatars/miguel.png"
         },
         title: "Criando um app do zero utilizando React.js",
         date: "May 12, 2021",
@@ -30,7 +30,7 @@ const posts = [
             id: 2,
             name: "Ze piqueno",
             username: "MDMago",
-            avatar: "http://via.placeholder.com/150"
+            avatar: "/images/avatars/miguel.png"
         },
         title: "Criando um app do zero utilizando React.js",
         date: "May 12, 2021",

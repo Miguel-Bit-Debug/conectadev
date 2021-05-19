@@ -3,10 +3,10 @@ import { Button } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
 import AppBar from '@material-ui/core/AppBar'
 import ToolBar from '@material-ui/core/Toolbar'
-import SvgIcon from '@material-ui/core/SvgIcon'
-import Avatar from '@material-ui/core/Avatar'
-import { Bell } from 'react-feather'
+import Account from './Account'
+import Box from '@material-ui/core/Box'
 
+import Notifications from './Notifications'
 
 const useStyles = makeStyles({
     appBar: {
@@ -21,35 +21,29 @@ const useStyles = makeStyles({
     userSection: {
         display: 'flex',
         alignItems: 'center'
-    },
-    button: {
-        marginRight: 10
-    },
-    bell: {
-        marginRight: 10
     }
 })
 
 
 function Header() {
-
     const classes = useStyles()
-    const user = null
 
     return (
         <AppBar className={classes.appBar} position="fixed" color="inherit">
             <ToolBar>
-                <img src="/images/logo.png" className={classes.img} />
-                <div className={classes.grow}></div>
+                <img src={"/images/logo.png"} className={classes.img} />
+                <div className={classes.grow} />
 
                 <div className={classes.userSection}>
                     <Button className={classes.button} color="primary" variant="contained">
                         Novo Post
                 </Button >
-                    <SvgIcon className={classes.bell}>
-                        <Bell></Bell>
-                    </SvgIcon>
-                    <Avatar alt="Remy Shalf" src={user && user.avatar} />
+                <Box ml={2}>
+                    <Notifications />
+                </Box>
+                <Box ml={2}>
+                    <Account />
+                </Box>
                 </div>
             </ToolBar>
         </AppBar>

@@ -10,9 +10,8 @@ import TextField from '@material-ui/core/TextField'
 import Button from '@material-ui/core/Button'
 import Link from '@material-ui/core/Link'
 import { useNavigate } from 'react-router-dom'
-import authService from '../../services/authService'
-import { useSelector, useDispatch } from 'react-redux'
-import signIn from '../../actions/accountAction'
+import { useDispatch } from 'react-redux'
+import { signIn } from '../../actions/accountAction'
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -58,12 +57,9 @@ function SignIn() {
     const [errorMessage, setErrorMessage] = useState('')
     const dispatch = useDispatch()
 
-    const account = useSelector(state => state)
-
     async function handleSignIn() {
         try {
                 await dispatch(signIn(email, password))
-                await authService.signIn(email, password)
                 navigate('/')
         } catch (error) {
             setErrorMessage(error.response.data.message)
